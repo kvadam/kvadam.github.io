@@ -1,3 +1,76 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    @apply select-none scroll-smooth;
+}
+
+/* NAV */
+.animated-text {
+    @apply relative inline-block transition-all duration-150 delay-150 before:content-[''] before:absolute before:transition-all before:duration-150 before:left-0 before:bottom-0 before:w-0 before:h-0.5 before:bg-black before:opacity-0 hover:before:opacity-100 hover:before:w-full;
+}
+
+.hamburger {
+    @apply cursor-pointer w-6 h-6 transition-all duration-500 relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+    @apply absolute top-0 left-0 w-6 h-0.5 bg-black rotate-0 transition-all duration-500;
+}
+
+.hamburger-middle {
+    @apply translate-y-2;
+}
+
+.hamburger-bottom {
+    @apply translate-y-4;
+}
+
+.open {
+    @apply rotate-90;
+}
+
+.open .hamburger-top {
+    @apply rotate-45 translate-y-1.5;
+}
+
+.open .hamburger-middle {
+    display: none;
+}
+
+.open .hamburger-bottom {
+    @apply -rotate-45 translate-y-1.5;
+}
+
+/* Hero */
+.bg-clip {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+}
+
+/* Utilities */
+.svg-white-sm {
+    @apply w-4 h-4;
+}
+
+.svg-white-sm > path {
+    @apply fill-white;
+}
+
+.svg-white {
+    @apply w-8 h-8;
+}
+.svg-white > path {
+    @apply fill-white;
+}
+
+.svg-white-xl {
+    @apply w-12 h-12;
+}
+
+.svg-white-xl > path {
+    @apply fill-white;
+}

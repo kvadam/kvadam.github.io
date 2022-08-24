@@ -1,12 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+
+        <title>Code Factory</title>
+
+        <link rel="shortcut icon" href="./favicon.ico" />
+
+        <link rel="stylesheet" href="./main.css" />
+
+        <script defer src="./index.js"></script>
     </head>
+
     <body>
-        <h1>Teszt</h1>
+        <!-- Navbar -->
+        <nav class="z-50 sticky top-0 bg-white/95 backdrop-blur drop-shadow-lg">
+            <div class="relative flex container justify-between items-center mx-auto">
+                <div class="px-4">
+                    <a href="#">
+                        <svg class="w-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 101 101" fill="none">
+                            <path id="logo-path" d="M45.5 10L3.5 51L51 97.5L98 51L51 5V29.5L73 51L51 72.5L29.5 51L51 30.5V91" stroke="black" stroke-width="4" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="hidden md:flex gap-8 text-2xl font-semibold">
+                    <a class="animated-text py-8 before:bottom-8" href="#section-about-us">
+                        Rólunk
+                    </a>
+                    <a class="animated-text py-8 before:bottom-8" href="#section-contact">
+                        Kapcsolat
+                    </a>
+                </div>
+                 <!-- Hamburger icon -->
+                <button id="menu-btn" class="block hamburger md:hidden focus:outline-none mr-2 my-8">
+                    <span class="hamburger-top"></span>
+                    <span class="hamburger-middle"></span>
+                    <span class="hamburger-bottom"></span>
+                </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden">
+                <div id="menu" class="absolute flex-col items-center self-end hidden py-8 mt-8 space-y-6 text-black font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow">
+                    <a href="#section-about-us">Rólunk</a>
+                    <a href="#section-contact">Kapcsolat</a>
+                </div>
+        </nav>
+        <!-- Hero section -->
+        <div id="section-hero" class="section py-60 bg-[#1b2a41] md:bg-gray-700 md:bg-hero-image bg-blend-soft-light bg-clip text-center text-white">
+            <h1 class="text-8xl font-extrabold drop-shadow-lg pb-16">Code Factory</h1>
+            <p class="w-4/5 mx-auto text-2xl font-semibold">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam adipisci culpa
+                explicabo quibusdam minus. Exercitationem maiores dolorem blanditiis sit, nulla ex
+                fugit unde dolorum. Officiis libero aliquid temporibus cupiditate necessitatibus!
+            </p>
+            <div class="flex justify-center items-center gap-16 pt-16">
+                <a href="#">
+                    <svg class="drop-shadow-lg svg-white-xl" width="48" height="48" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10C20 4.48 15.52 0 10 0C4.48 0 0 4.48 0 10C0 14.84 3.44 18.87 8 19.8V13H6V10H8V7.5C8 5.57 9.57 4 11.5 4H14V7H12C11.45 7 11 7.45 11 8V10H14V13H11V19.95C16.05 19.45 20 15.19 20 10Z" />
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="drop-shadow-lg svg-white-xl" width="48" height="37" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="M18.2701 1.33005C16.9401 0.710046 15.5001 0.260046 14.0001 4.59982e-05C13.987 -0.000374605 13.9739 0.00209348 13.9618 0.00727676C13.9497 0.01246 13.9389 0.0202326 13.9301 0.0300462C13.7501 0.360046 13.5401 0.790046 13.4001 1.12005C11.8091 0.880046 10.1911 0.880046 8.60012 1.12005C8.46012 0.780046 8.25012 0.360046 8.06012 0.0300462C8.05012 0.0100462 8.02012 4.59982e-05 7.99012 4.59982e-05C6.49012 0.260046 5.06012 0.710046 3.72012 1.33005C3.71012 1.33005 3.70012 1.34005 3.69012 1.35005C0.970117 5.42005 0.220117 9.38004 0.590117 13.3C0.590117 13.32 0.600117 13.34 0.620117 13.35C2.42012 14.67 4.15012 15.47 5.86012 16C5.89012 16.01 5.92012 16 5.93012 15.98C6.33012 15.43 6.69012 14.85 7.00012 14.24C7.02012 14.2 7.00012 14.16 6.96012 14.15C6.39012 13.93 5.85012 13.67 5.32012 13.37C5.28012 13.35 5.28012 13.29 5.31012 13.26C5.42012 13.18 5.53012 13.09 5.64012 13.01C5.66012 12.99 5.69012 12.99 5.71012 13C9.15012 14.57 12.8601 14.57 16.2601 13C16.2801 12.99 16.3101 12.99 16.3301 13.01C16.4401 13.1 16.5501 13.18 16.6601 13.27C16.7001 13.3 16.7001 13.36 16.6501 13.38C16.1301 13.69 15.5801 13.94 15.0101 14.16C14.9701 14.17 14.9601 14.22 14.9701 14.25C15.2901 14.86 15.6501 15.44 16.0401 15.99C16.0701 16 16.1001 16.01 16.1301 16C17.8501 15.47 19.5801 14.67 21.3801 13.35C21.4001 13.34 21.4101 13.32 21.4101 13.3C21.8501 8.77004 20.6801 4.84005 18.3101 1.35005C18.3001 1.34005 18.2901 1.33005 18.2701 1.33005ZM7.52012 10.91C6.49012 10.91 5.63012 9.96005 5.63012 8.79005C5.63012 7.62005 6.47012 6.67005 7.52012 6.67005C8.58012 6.67005 9.42012 7.63005 9.41012 8.79005C9.41012 9.96005 8.57012 10.91 7.52012 10.91ZM14.4901 10.91C13.4601 10.91 12.6001 9.96005 12.6001 8.79005C12.6001 7.62005 13.4401 6.67005 14.4901 6.67005C15.5501 6.67005 16.3901 7.63005 16.3801 8.79005C16.3801 9.96005 15.5501 10.91 14.4901 10.91Z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <!-- About us -->
+        <section class="-mt-24 pt-48 pb-24 bg-white" id="section-about-us">
+            <div class="container mx-auto">
+                <h1 class="text-5xl pb-12">Tevékenység</h1>
+                <p class="text-xl">
+                    Különböző webes technológiák felhasználásával készítünk statikus és dinamikus
+                    weboldalakat, webalkalmazásokat.
+                </p>
+                <p class="text-xl pt-12">Az általunk használt techstack:</p>
+                <ul class="text-xl pl-12 list-disc">
+                    <li>Javascript, Typescript</li>
+                    <li>React library</li>
+                    <li>Tailwindcss</li>
+                    <li>Node.js és Express</li>
+                    <li>Planetscale és Prisma</li>
+                </ul>
+            </div>
+        </section>
+        <!-- Contact -->
+        <section class="relative border-t border-slate-300" id="section-contact">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10632.078973544823!2d20.2578773!3d48.2254944!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473f874609b08143%3A0x23048ba21a6424cb!2zw5N6ZCwgQm9seW9rLCAzNjAw!5e0!3m2!1shu!2shu!4v1660821891089!5m2!1shu!2shu"
+                width="100%"
+                height="600"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <div class="z-10 absolute top-32 left-2.5 p-12 border border-slate-200 shadow bg-white select-all">
+                <p class="text-xl font-bold">Elérhetőségek:</p>
+                <div class="flex items-center gap-4 pt-4">
+                    <svg  id="address-icon" class="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="black" d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C11.337 11.5 10.7011 11.2366 10.2322 10.7678C9.76339 10.2989 9.5 9.66304 9.5 9C9.5 8.33696 9.76339 7.70107 10.2322 7.23223C10.7011 6.76339 11.337 6.5 12 6.5C12.663 6.5 13.2989 6.76339 13.7678 7.23223C14.2366 7.70107 14.5 8.33696 14.5 9C14.5 9.66304 14.2366 10.2989 13.7678 10.7678C13.2989 11.2366 12.663 11.5 12 11.5Z" />
+                    </svg>
+                    <span id="address-text" class="text-xl">1234 Asd, Random utca 12.</span>
+                </div>
+                <div class="flex items-center gap-4 pt-4">
+                    <svg id="phone-icon" class="cursor-pointer" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                        <path fill="black" d="M3.62 7.79C5.06 10.62 7.38 12.93 10.21 14.38L12.41 12.18C12.68 11.91 13.08 11.82 13.43 11.94C14.55 12.31 15.76 12.51 17 12.51C17.55 12.51 18 12.96 18 13.51V17C18 17.55 17.55 18 17 18C7.61 18 0 10.39 0 1C0 0.45 0.45 0 1 0H4.5C5.05 0 5.5 0.45 5.5 1C5.5 2.25 5.7 3.45 6.07 4.57C6.18 4.92 6.1 5.31 5.82 5.59L3.62 7.79Z" />
+                    </svg>
+                    <span id="phone-number-text" class="text-xl">+36-12-345-6789</span>
+                </div>
+                <div class="flex items-center gap-4 pt-4">
+                    <svg id="email-icon" class="cursor-pointer" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="black" d="M19.99 7C19.99 6.28 19.62 5.65 19.05 5.3L10 0L0.95 5.3C0.38 5.65 0 6.28 0 7V17C0 18.1 0.9 19 2 19H18C19.1 19 20 18.1 20 17L19.99 7ZM10 12L1.74 6.84L10 2L18.26 6.84L10 12Z" />
+                    </svg>
+                    <a id="email-text" href="mailto:kvadam@gmail.com" class="text-xl">kvadam@gmail.com</a>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <section class="py-4 bg-gray-800 text-white">
+            <div class="container mx-auto">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <svg class="svg-white-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.88 9.14C13.16 9.2 13.49 10.29 13.51 10.8H15.3C15.22 8.82 13.81 7.61 11.85 7.61C9.64 7.61 8 9 8 12.14C8 14.08 8.93 16.38 11.84 16.38C14.06 16.38 15.25 14.73 15.28 13.43H13.49C13.46 14.02 13.04 14.81 11.86 14.87C10.55 14.83 10 13.81 10 12.14C10 9.25 11.28 9.16 11.88 9.14ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z" />
+                        </svg>
+                        <span>Code Factory, 2022</span>
+                    </div>
+                    <a href="#">
+                        <svg class="svg-white" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 8L6 14L7.41 15.41L12 10.83L16.59 15.41L18 14L12 8Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
