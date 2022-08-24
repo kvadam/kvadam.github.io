@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "npx tailwindcss -i input.css -o main.css",
+        "watch0": "npx tailwindcss -i input.css -o main.css --watch"
     },
     "repository": {
         "type": "git",
@@ -16,5 +17,8 @@
     "bugs": {
         "url": "https://github.com/kvadam/kvadam.github.io/issues"
     },
-    "homepage": "https://github.com/kvadam/kvadam.github.io#readme"
+    "homepage": "https://github.com/kvadam/kvadam.github.io#readme",
+    "devDependencies": {
+        "tailwindcss": "^3.1.8"
+    }
 }
